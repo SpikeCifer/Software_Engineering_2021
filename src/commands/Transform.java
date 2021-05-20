@@ -1,15 +1,22 @@
 package commands;
 
+import model.Document;
+
 public class Transform implements ICommand {
 
-	public Transform() {
+	Document doc;
+	public Transform(Document doc) {
+		
+		this.doc = doc;
 		
 	}
-	
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-
+		
+		//this.doc.transform();
+		Document doc = Document.getInstance();
+		doc.transform();
+		
 	}
 
 }
