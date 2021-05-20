@@ -6,23 +6,21 @@ public class RecordManager {
 	ArrayList<ICommand> commandsList;
 	boolean isActive = false;
 	
-	RecordManager() {
-		
-	}
+	RecordManager() { commandsList = new ArrayList<ICommand>(); }
 	
-	public void activate() {
-		
-	}
+	public void activate() { isActive = true; }
 	
 	public void replay() {
-		
+		for (ICommand cmd : commandsList)
+			cmd.execute();
 	}
 	
 	public void deactivate() {
-		
+		isActive = false;
+		// If we wish to clear the list: commandsList.clear();
 	}
 	
 	public void addCommand(ICommand cmd) {
-		commandsList.add(cmd);
-	}
+		if(isActive) commandsList.add(cmd);
+	}	
 }

@@ -1,5 +1,7 @@
 package input;
 
+import java.util.ArrayList;
+
 public interface IReadStrategy {
-	public void read();
+	public ArrayList<String> read(String filename);
 }

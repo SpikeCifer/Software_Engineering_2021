@@ -7,15 +7,10 @@ public class FakeTTSFacade extends TTSFacade {
 	private ArrayList <String> playedcontents;
 	
 	@Override
-	public void play(ArrayList <String> text) {
-		
+	public void playContents(ArrayList <String> text) {
 		playedcontents = text;
-		super.play(text);
-		
-		
+		super.playContents(text);
 	}
-	public ArrayList <String> getPlayedcontents() 
-	{	
-		return playedcontents;
-	}
+	
+	public ArrayList <String> getPlayedContents() {	return playedcontents; }
 }

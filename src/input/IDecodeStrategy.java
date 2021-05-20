@@ -1,6 +1,7 @@
 package input;
 
+import java.util.ArrayList;
+
 public interface IDecodeStrategy {
-	
-	void decode();
+	public ArrayList<String> decode(ArrayList<String> fileContents);
 }

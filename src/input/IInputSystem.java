@@ -1,5 +1,7 @@
 package input;
 
-public interface IInputSystem {
-	public void read();
+import java.util.ArrayList;
+
+public interface IInputSystem {	
+	public ArrayList<String> read(); 
 }

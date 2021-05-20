@@ -1,11 +1,12 @@
 package input;
 
-public class DecodeDecorator extends BaseDecorator {
-	IDecodeStrategy decodeStrategy;
+import java.util.ArrayList;
+
+public class DecodeDecorator extends BaseReadDecorator {
+	private IDecodeStrategy decodeStrategy;
 	
 	public DecodeDecorator(IInputSystem baseReader) {
 		super(baseReader);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void setDecodeStrategy(IDecodeStrategy decodeStrategy) {
@@ -13,8 +14,7 @@ public class DecodeDecorator extends BaseDecorator {
 	}
 	
 	@Override
-	public void read() {
-		decodeStrategy.decode();
-	}
-		
+	public ArrayList<String> read() {
+		return decodeStrategy.decode(reader.read());
+	}		
 }
