@@ -16,5 +16,4 @@ public class SaveDocumentCommand implements ICommand {
 		Document doc = Document.getInstance();
 		doc.save(filename, encryption);
 	}
-
 }
