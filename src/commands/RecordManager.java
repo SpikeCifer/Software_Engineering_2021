@@ -3,10 +3,10 @@ package commands;
 import java.util.ArrayList;
 
 public class RecordManager {
-	ArrayList<ICommand> commandsList;
-	boolean isActive = false;
+	private ArrayList<ICommand> commandsList;
+	private boolean isActive = false;
 	
-	RecordManager() { commandsList = new ArrayList<ICommand>(); }
+	public RecordManager() { commandsList = new ArrayList<ICommand>(); }
 	
 	public void activate() { isActive = true; }
 	
@@ -21,6 +21,11 @@ public class RecordManager {
 	}
 	
 	public void addCommand(ICommand cmd) {
-		if(isActive) commandsList.add(cmd);
+		if(isActive) 
+			commandsList.add(cmd);
 	}	
+	
+	public boolean getRecordingStatus() {
+		return isActive;
+	}
 }

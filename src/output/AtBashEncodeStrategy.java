@@ -6,39 +6,21 @@ public class AtBashEncodeStrategy implements IEncodeStrategy {
 
 	@Override
 	public ArrayList<String> encode(ArrayList<String> docContents) {
+		ArrayList<String> cipheredContents = new ArrayList<String>();
 		for (String plaintext: docContents)
-			docContents.set(docContents.indexOf(plaintext), encodeLine(plaintext));
-		return docContents;
+			cipheredContents.add(encodeLine(plaintext));
+		return cipheredContents;
 	}
-	
-	public String encodeLine(String plaintext) {
-        String ciphertext = "";
-        plaintext = removeUnwantedChars(plaintext.toLowerCase());
-        for(char c : plaintext.toCharArray()) {
-            if(Character.isLetter(c))
-                ciphertext += (char) ('a' + ('z' - c));
-            else
-                ciphertext += c;
-        }
-        return getSubStrings(ciphertext).trim();
-    }
-	
-	private String getSubStrings(String input) {
-        String out = "";
-        for(int i = 0; i < input.length(); i += 5) {
-            if(i + 5 <= input.length())
-                out += (input.substring(i, i + 5) + " ");
-            else
-                out += (input.substring(i) + " ");
-        }
-        return out;
-    }
-
-    private String removeUnwantedChars(String input) {
-        String out = "";
-        for(char c : input.toCharArray())
-            if(Character.isLetterOrDigit(c))
-                out += c;
-        return out;
+    
+    private String encodeLine(String plaintext) {
+    	String ciphertext = "";
+    	for (char ch : plaintext.toCharArray()) {
+    		if (ch >= 'A' && ch <= 'Z' )
+        		ch = (char) ('Z' + ('A' - ch));
+        	else if (ch >= 'a' && ch <= 'z')
+        		ch = (char) ('z' + ('a' - ch));
+    		ciphertext += ch;
+    	}
+    	return ciphertext;
     }
 }

@@ -49,7 +49,4 @@ public class MainMenu extends JFrame {
 		for (int i = 0; i < BUTTONS_N; i++)
 			contentPane.add(menuButtons[i]);
 	}
-	
-	
-
 }

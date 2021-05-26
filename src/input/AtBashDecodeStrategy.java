@@ -3,30 +3,22 @@ package input;
 import java.util.ArrayList;
 
 public class AtBashDecodeStrategy implements IDecodeStrategy {
+
     public ArrayList<String> decode(ArrayList<String> fileContents) {
-    	for (String line: fileContents) {
-            String ciphertext = removeUnwantedChars(line.toLowerCase());
-            fileContents.set(fileContents.indexOf(line), applyCipher(ciphertext));
-    	}
+    	for (String line: fileContents)
+            fileContents.set(fileContents.indexOf(line), decodeString(line));
         return fileContents;
     }
-
-    private String removeUnwantedChars(String input) {
-        String out = "";
-        for(char c : input.toCharArray())
-            if(Character.isLetterOrDigit(c))
-                out += c;
-        return out;
-    }
     
-    private String applyCipher(String text) {
-    	String plaintext = "";
-    	for(char c : text.toCharArray()) {
-            if(Character.isLetter(c))
-                plaintext += (char) ('z' + ('a' - c));
-            else
-                plaintext += c;
-        }
-    	return plaintext;
+    private String decodeString(String plaintext) {
+    	String ciphertext = "";
+    	for (char ch : plaintext.toCharArray()) {
+    		if (ch >= 'A' && ch <= 'Z' )
+        		ch = (char) ('Z' + ('A' - ch));
+        	else if (ch >= 'a' && ch <= 'z')
+        		ch = (char) ('z' + ('a' - ch));
+    		ciphertext += ch;
+    	}
+    	return ciphertext;
     }
 }

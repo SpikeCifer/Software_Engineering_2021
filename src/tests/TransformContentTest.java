@@ -18,6 +18,5 @@ class TransformContentTest {
 		TransformContentsCommand test = new TransformContentsCommand();
 		test.execute();
 		assertEquals(doc.getContents(), fake.getPlayedContents());
-		
 	}
 }

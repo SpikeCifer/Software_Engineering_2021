@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import model.FakeTTSFacade;
 
 public class TTSFacade {
 	protected int pitch;
