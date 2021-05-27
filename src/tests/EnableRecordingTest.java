@@ -11,9 +11,8 @@ class EnableRecordingTest {
 
 	@Test
 	void test() {
-		RecordManager manager = new RecordManager();
-		new StartRecordingCommand(manager).execute();
-		assertTrue(manager.getRecordingStatus());
+		new StartRecordingCommand().execute();
+		assertTrue(RecordManager.getInstance().getRecordingStatus());
 	}
 
 }

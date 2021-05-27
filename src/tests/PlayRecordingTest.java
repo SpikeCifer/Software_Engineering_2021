@@ -1,20 +1,28 @@
 package tests;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
+
 import commands.RecordManager;
 import commands.StartRecordingCommand;
 import commands.TransformSpecifiedTextCommand;
+import model.Document;
 import model.FakeTTSFacade;
 
 public class PlayRecordingTest {
 
 	void test() {
 		RecordManager manager = RecordManager.getInstance();
-		StartRecordingCommand recordCmd = new StartRecordingCommand(manager);
-		recordCmd.execute();
+		new StartRecordingCommand().execute();
 		
 		FakeTTSFacade fake = new FakeTTSFacade();
-		TransformSpecifiedTextCommand transformCmd = new TransformSpecifiedTextCommand(1, 2);
-		transformCmd.execute();
+		Document doc = Document.getInstance();
+		doc.setTransformer(fake);
+		new TransformSpecifiedTextCommand(1, 3);
 		
+		manager.replay();
+		ArrayList<String> contents = doc.getContents();
+		assertEquals(contents.subList(1, 3), fake.getPlayedContents());
 	}
 }
