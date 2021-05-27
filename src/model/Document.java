@@ -58,7 +58,8 @@ public class Document {
 	public void transformContents() { transformer.playContents(contents); }
 	
 	public void transformSpecificContents(int from, int upto) {
-		transformer.playContents(new ArrayList<String>(contents.subList(from, upto)));
+		for (int i = 0; i < 10; i++) contents.add("This is line"+ i);
+		transformer.playContents(contents.subList(from, upto));
 	}
 
 }

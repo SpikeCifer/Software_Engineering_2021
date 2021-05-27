@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import commands.StartRecordingCommand;
 import commands.RecordManager;
 
-class TestActivateManager {
+class EnableRecordingTest {
 
 	@Test
 	void test() {

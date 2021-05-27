@@ -1,6 +1,6 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class TTSFacade {
 	protected int pitch;
@@ -9,7 +9,7 @@ public class TTSFacade {
 	
 	public void configure() {}
 	
-	public void playContents(ArrayList <String> text) {
+	public void playContents(List<String> contents) {
 		System.out.println("print");
 	}
 	

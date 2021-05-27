@@ -9,7 +9,11 @@ public class TransformSpecifiedTextCommand implements ICommand {
 	public TransformSpecifiedTextCommand(int startLine, int endLine) {
 		this.startLine = startLine;
 		this.endLine = endLine;
+		
+		RecordManager manager = RecordManager.getInstance();
+		manager.addCommand(this);
 	}
+	
 	@Override
 	public void execute() {
 		Document doc = Document.getInstance();

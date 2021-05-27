@@ -3,10 +3,17 @@ package commands;
 import java.util.ArrayList;
 
 public class RecordManager {
+	private static RecordManager instance;
 	private ArrayList<ICommand> commandsList;
 	private boolean isActive = false;
 	
-	public RecordManager() { commandsList = new ArrayList<ICommand>(); }
+	private RecordManager() { commandsList = new ArrayList<ICommand>(); }
+	
+	public static RecordManager getInstance() {
+		if (instance == null) 
+			instance = new RecordManager();
+		return instance;
+	}
 	
 	public void activate() { isActive = true; }
 	
@@ -28,4 +35,7 @@ public class RecordManager {
 	public boolean getRecordingStatus() {
 		return isActive;
 	}
+	
+	// RecordManager manager =  RecordManager.getInstance()
+	// manager.addCommand(TransformSpecifiedTextCommand or TransformContentsCommand)
 }

@@ -1,16 +1,16 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class FakeTTSFacade extends TTSFacade {
 	
-	private ArrayList <String> playedcontents;
+	private List <String> playedcontents;
 	
 	@Override
-	public void playContents(ArrayList <String> text) {
-		playedcontents = text;
-		super.playContents(text);
+	public void playContents(List<String> contents) {
+		playedcontents = contents;
+		super.playContents(contents);
 	}
 	
-	public ArrayList <String> getPlayedContents() {	return playedcontents; }
+	public List <String> getPlayedContents() {	return playedcontents; }
 }
