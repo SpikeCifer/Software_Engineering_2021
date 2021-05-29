@@ -4,8 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import commands.OpenDocumentCommand;
-import commands.SaveDocumentCommand;
+import commands.OpenDocumentCmd;
+import commands.SaveDocumentCmd;
 import input.AtBashDecodeStrategy;
 import input.ExcelReadStrategy;
 import input.Rot13DecodeStrategy;
@@ -36,48 +36,48 @@ class SaveDocumentTest {
 	
 	@Test
 	void testWriteToWord() {
-		new OpenDocumentCommand(SMALL_WORD_TEST_FILE, "None").execute();
-		new SaveDocumentCommand(OUTPUT_WORD_FILE, "None").execute();
+		new OpenDocumentCmd(SMALL_WORD_TEST_FILE, "None").execute();
+		new SaveDocumentCmd(OUTPUT_WORD_FILE, "None").execute();
 		assertEquals(Document.getInstance().getContents(), 
 				wordInput.read(OUTPUT_WORD_FILE));
 	}
 	
 	@Test
 	void testWriteRot13EncryptedToWord() {
-		new OpenDocumentCommand(SMALL_WORD_TEST_FILE, "None").execute();
-		new SaveDocumentCommand(OUTPUT_WORD_FILE, "Rot13").execute();
+		new OpenDocumentCmd(SMALL_WORD_TEST_FILE, "None").execute();
+		new SaveDocumentCmd(OUTPUT_WORD_FILE, "Rot13").execute();
 		assertEquals(Document.getInstance().getContents(), 
 				wordInput.read(OUTPUT_WORD_FILE));
 	}
 	
 	@Test
 	void testWriteAtBashEncryptedToWord() {
-		new OpenDocumentCommand(SMALL_WORD_TEST_FILE, "None").execute();
-		new SaveDocumentCommand(OUTPUT_WORD_FILE, "AtBash").execute();
+		new OpenDocumentCmd(SMALL_WORD_TEST_FILE, "None").execute();
+		new SaveDocumentCmd(OUTPUT_WORD_FILE, "AtBash").execute();
 		assertEquals(Document.getInstance().getContents(), 
 				atBashDecoder.decode(wordInput.read(OUTPUT_WORD_FILE)));
 	}
 	
 	@Test
 	void testWriteToExcel() {
-		new OpenDocumentCommand(EXCEL_TEST_FILE, "None").execute();
-		new SaveDocumentCommand(OUTPUT_EXCEL_FILE, "None").execute();		
+		new OpenDocumentCmd(EXCEL_TEST_FILE, "None").execute();
+		new SaveDocumentCmd(OUTPUT_EXCEL_FILE, "None").execute();		
 		assertEquals(Document.getInstance().getContents(), 
 				excelInput.read(OUTPUT_EXCEL_FILE));
 	}
 	
 	@Test
 	void testWriteRot13EncryptedToExcel() {
-		new OpenDocumentCommand(EXCEL_TEST_FILE, "None").execute();
-		new SaveDocumentCommand(EXCEL_TEST_FILE, "Rot13").execute();		
+		new OpenDocumentCmd(EXCEL_TEST_FILE, "None").execute();
+		new SaveDocumentCmd(EXCEL_TEST_FILE, "Rot13").execute();		
 		assertEquals(Document.getInstance().getContents(), 
 				rotDecoder.decode(excelInput.read(OUTPUT_WORD_FILE)));
 	}
 	
 	@Test
 	void testWriteAtBashEncryptedToExcel() {
-		new OpenDocumentCommand(EXCEL_TEST_FILE, "None").execute();
-		new SaveDocumentCommand(EXCEL_TEST_FILE, "AtBash").execute();
+		new OpenDocumentCmd(EXCEL_TEST_FILE, "None").execute();
+		new SaveDocumentCmd(EXCEL_TEST_FILE, "AtBash").execute();
 		assertEquals(Document.getInstance().getContents(), 
 				atBashDecoder.decode(excelInput.read(OUTPUT_WORD_FILE)));
 	}

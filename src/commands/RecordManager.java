@@ -24,18 +24,12 @@ public class RecordManager {
 	
 	public void deactivate() {
 		isActive = false;
-		// If we wish to clear the list: commandsList.clear();
+		commandsList.clear();
 	}
 	
 	public void addCommand(ICommand cmd) {
-		if(isActive) 
-			commandsList.add(cmd);
+		if(isActive) commandsList.add(cmd);
 	}	
 	
-	public boolean getRecordingStatus() {
-		return isActive;
-	}
-	
-	// RecordManager manager =  RecordManager.getInstance()
-	// manager.addCommand(TransformSpecifiedTextCommand or TransformContentsCommand)
+	public boolean getRecordingStatus() { return isActive; }
 }

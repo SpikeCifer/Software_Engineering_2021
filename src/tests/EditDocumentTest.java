@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-import commands.EditDocumentCommand;
+import commands.EditDocumentCmd;
 import model.Document;
 
 /**
@@ -23,12 +23,12 @@ class EditDocumentTest {
 
 	@Test
 	void testAddingNewLines() {
-		ArrayList<String> newContents = new ArrayList<String>();
+		ArrayList<String> newContents = Document.getInstance().getContents();
 		String newLine = "This is a new line";
 		newContents.add(newLine);
-		new EditDocumentCommand(newContents).execute();
-		Document doc = Document.getInstance();
 		
-		assertTrue(doc.getContents().contains(newLine));
+		new EditDocumentCmd(newContents).execute();
+		
+		assertTrue(Document.getInstance().getContents().contains(newLine));
 	}
 }
