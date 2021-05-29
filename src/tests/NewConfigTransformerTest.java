@@ -1,14 +1,14 @@
 package tests;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import commands.ConfigureTransformerCmd;
 import model.Document;
 import model.TTSFacade;
 
-public class ConfigTransformerTest {
+class NewConfigTransformerTest {
 	private final int PITCH = 15;
 	private final int VOLUME = 10;
 	private final int RATE = 15;
@@ -22,5 +22,4 @@ public class ConfigTransformerTest {
 		assertEquals(VOLUME, transformer.getVolume());
 		assertEquals(RATE, transformer.getRate());
 	}
-
 }

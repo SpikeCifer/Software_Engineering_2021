@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-import commands.OpenDocumentCommand;
+import commands.OpenDocumentCmd;
 import input.AtBashDecodeStrategy;
 import input.ExcelReadStrategy;
 import input.Rot13DecodeStrategy;
@@ -34,7 +34,7 @@ class OpenDocumentTest {
 	
 	@Test
 	void testWordFile() {
-		new OpenDocumentCommand(PLAIN_WORD_TEST_FILE, "None").execute();
+		new OpenDocumentCmd(PLAIN_WORD_TEST_FILE, "None").execute();
 		ArrayList<String> expectedContents = new WordReadStrategy().read(PLAIN_WORD_TEST_FILE);
 		
 		Document doc = Document.getInstance();
@@ -43,7 +43,7 @@ class OpenDocumentTest {
 	
 	@Test
 	void testWordRot13EncryptedFile() {
-		new OpenDocumentCommand(ROT13_WORD_TEST_FILE, "Rot13").execute();
+		new OpenDocumentCmd(ROT13_WORD_TEST_FILE, "Rot13").execute();
 		ArrayList<String> expectedContents = new WordReadStrategy().read(ROT13_WORD_TEST_FILE);
 		expectedContents = new Rot13DecodeStrategy().decode(expectedContents);
 		 
@@ -53,7 +53,7 @@ class OpenDocumentTest {
 	
 	@Test
 	void testWordAtBashEncryptedFile() {
-		new OpenDocumentCommand(ATBASH_WORD_TEST_FILE, "AtBash").execute();
+		new OpenDocumentCmd(ATBASH_WORD_TEST_FILE, "AtBash").execute();
 		
 		ArrayList<String> expectedContents = new WordReadStrategy().read(ATBASH_WORD_TEST_FILE);
 		expectedContents = new AtBashDecodeStrategy().decode(expectedContents);
@@ -65,7 +65,7 @@ class OpenDocumentTest {
 	void testExcelFile() {
 		ArrayList<String> expectedContents = new ExcelReadStrategy().read(PLAIN_EXCEL_TEST_FILE);
 		
-		new OpenDocumentCommand(PLAIN_EXCEL_TEST_FILE, "None").execute();
+		new OpenDocumentCmd(PLAIN_EXCEL_TEST_FILE, "None").execute();
 		Document doc = Document.getInstance();
 		assertEquals(expectedContents, doc.getContents());
 	}
@@ -75,7 +75,7 @@ class OpenDocumentTest {
 		ArrayList<String> expectedContents = new ExcelReadStrategy().read(ROT13_EXCEL_TEST_FILE);
 		expectedContents = new Rot13DecodeStrategy().decode(expectedContents);
 		 
-		new OpenDocumentCommand(ROT13_EXCEL_TEST_FILE, "Rot13").execute();
+		new OpenDocumentCmd(ROT13_EXCEL_TEST_FILE, "Rot13").execute();
 		Document doc = Document.getInstance();
 		assertEquals(expectedContents, doc.getContents());
 	}
@@ -85,7 +85,7 @@ class OpenDocumentTest {
 		ArrayList<String> expectedContents = new ExcelReadStrategy().read(ATBASH_EXCEL_TEST_FILE);
 		expectedContents = new AtBashDecodeStrategy().decode(expectedContents);
 		
-		new OpenDocumentCommand(ATBASH_EXCEL_TEST_FILE, "AtBash").execute();
+		new OpenDocumentCmd(ATBASH_EXCEL_TEST_FILE, "AtBash").execute();
 		Document doc = Document.getInstance();
 		assertEquals(expectedContents, doc.getContents()); 
 	}

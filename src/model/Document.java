@@ -27,7 +27,6 @@ public class Document {
 		return instance;	
 	}
 	
-	
 	// IO System Commands
 	public void open(String filename, String encryption) {
 		IInputSystem reader = new InputSystemFactory().createInputSystem(filename, encryption);
@@ -35,10 +34,7 @@ public class Document {
 	}
 	
 	
-	// Currently just adds lines at the end of the saved contents
-	public void edit(ArrayList<String> additionalContent) {
-		for (String str : additionalContent) contents.add(str); 
-	}
+	public void edit(ArrayList<String> newContents) { contents = newContents; }
 	
 	
 	public void save(String filename, String encryption) {
@@ -58,6 +54,7 @@ public class Document {
 	public void transformContents() { transformer.playContents(contents); }
 	
 	public void transformSpecificContents(int from, int upto) {
+		// TODO: Change this back to its appointed test
 		for (int i = 0; i < 10; i++) contents.add("This is line"+ i);
 		transformer.playContents(contents.subList(from, upto));
 	}

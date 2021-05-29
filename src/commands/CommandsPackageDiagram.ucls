@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="commands.OpenDocumentCommand" project="SE2021" 
-    file="/SE2021/src/commands/OpenDocumentCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="commands.OpenDocumentCmd" project="SE2021" 
+    file="/SE2021/src/commands/OpenDocumentCmd.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="678" y="521"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -10,8 +10,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="commands.TransformSpecifiedTextCommand" project="SE2021" 
-    file="/SE2021/src/commands/TransformSpecifiedTextCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="commands.TransformSpecifiedTextCmd" project="SE2021" 
+    file="/SE2021/src/commands/TransformSpecifiedTextCmd.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1348" y="237"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -19,8 +19,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="commands.SaveDocumentCommand" project="SE2021" 
-    file="/SE2021/src/commands/SaveDocumentCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="commands.SaveDocumentCmd" project="SE2021" 
+    file="/SE2021/src/commands/SaveDocumentCmd.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1338" y="401"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -28,8 +28,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="commands.ConfigureTransformerCommand" project="SE2021" 
-    file="/SE2021/src/commands/ConfigureTransformerCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="commands.ConfigureTransformerCmd" project="SE2021" 
+    file="/SE2021/src/commands/ConfigureTransformerCmd.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1194" y="572"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -37,8 +37,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="commands.EditDocumentCommand" project="SE2021" 
-    file="/SE2021/src/commands/EditDocumentCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="5" language="java" name="commands.EditDocumentCmd" project="SE2021" 
+    file="/SE2021/src/commands/EditDocumentCmd.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="956" y="557"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -55,8 +55,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="7" language="java" name="commands.PlayRecordingCommand" project="SE2021" 
-    file="/SE2021/src/commands/PlayRecordingCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="7" language="java" name="commands.PlayRecordingCmd" project="SE2021" 
+    file="/SE2021/src/commands/PlayRecordingCmd.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="724" y="113"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -73,8 +73,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="commands.StopRecordingCommand" project="SE2021" 
-    file="/SE2021/src/commands/StopRecordingCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="9" language="java" name="commands.StopRecordingCmd" project="SE2021" 
+    file="/SE2021/src/commands/StopRecordingCmd.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="939" y="108"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -91,95 +91,50 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="commands.CommandFactory" project="SE2021" 
-    file="/SE2021/src/commands/CommandFactory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="97" width="170" x="450" y="125"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <realization id="12">    
-    <end type="SOURCE" refId="5"/>    
+  <realization id="11">    
+    <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="6"/>  
   </realization>  
-  <association id="13">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="14" name="manager">        
-        <position height="0" width="0" x="-31" y="-2"/>      
-      </attribute>      
-      <multiplicity id="15" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-31" y="-2"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="16">    
+  <realization id="12">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <realization id="13">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="6"/>  
   </realization>  
-  <realization id="17">    
-    <end type="SOURCE" refId="1"/>    
+  <realization id="14">    
+    <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="6"/>  
   </realization>  
-  <association id="18">    
+  <realization id="15">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <realization id="16">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="17">    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="19" name="commandsList">        
+      <attribute id="18" name="commandsList">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="20" minimum="0" maximum="2147483647">        
+      <multiplicity id="19" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="21">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="22" name="manager">        
-        <position height="0" width="0" x="-31" y="-2"/>      
-      </attribute>      
-      <multiplicity id="23" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-31" y="-2"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="24">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <realization id="25">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <realization id="26">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <realization id="27">    
+  <realization id="20">    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="6"/>  
   </realization>  
-  <realization id="28">    
-    <end type="SOURCE" refId="4"/>    
+  <realization id="21">    
+    <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="6"/>  
   </realization>  
-  <association id="29">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="30" name="manager">        
-        <position height="0" width="0" x="-31" y="-2"/>      
-      </attribute>      
-      <multiplicity id="31" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-31" y="-2"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

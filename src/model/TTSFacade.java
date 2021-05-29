@@ -1,27 +1,25 @@
 package model;
 
-import java.io.File;
 import java.util.List;
-import java.util.Locale;
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
 
 
-
 public class TTSFacade {
+	// TODO: This is taking far too long
 	private Voice voice;
-	
 	protected int pitch;
 	protected int volume;
 	protected int rate;
 	
 	public TTSFacade() {
-	System.setProperty("freetts.voices",
-			   "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
-        this.voice = VoiceManager.getInstance().getVoice("kevin16");
-        if (this.voice == null) 
-		System.out.println("Unexpected Error whiles loading voices");
-        this.voice.allocate();
+		System.setProperty("freetts.voices",
+				"com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
+        voice = VoiceManager.getInstance().getVoice("kevin16");
+        
+        if (voice == null) 
+        	System.out.println("Unexpected Error while loading voices");
+        voice.allocate();
 	}
 	public void configure() {}
 	
@@ -43,6 +41,7 @@ public class TTSFacade {
 	public int getRate() { return rate; }
 	
 	private void play(String text) {
-		this.voice.speak(text);
+//		this.voice.speak(text);
+		System.out.println(text);
 	}
 }

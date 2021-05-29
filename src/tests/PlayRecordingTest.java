@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import commands.RecordManager;
 import commands.StartRecordingCommand;
-import commands.TransformSpecifiedTextCommand;
+import commands.TransformSpecifiedTextCmd;
 import model.Document;
 import model.FakeTTSFacade;
 
@@ -22,7 +22,7 @@ class PlayRecordingTest {
 		FakeTTSFacade fake = new FakeTTSFacade();
 		Document doc = Document.getInstance();
 		doc.setTransformer(fake);
-		new TransformSpecifiedTextCommand(1, 3);
+		new TransformSpecifiedTextCmd(1, 3);
 		
 		manager.replay();
 		ArrayList<String> contents = doc.getContents();
