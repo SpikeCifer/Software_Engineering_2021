@@ -9,23 +9,25 @@ import com.sun.speech.freetts.VoiceManager;
 
 
 public class TTSFacade {
+	private Voice voice;
 	
 	protected int pitch;
 	protected int volume;
 	protected int rate;
 	
-	private Voice voice;
 	public TTSFacade() {
-		System.setProperty("freetts.voices",
-                "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
+	System.setProperty("freetts.voices",
+			   "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
         this.voice = VoiceManager.getInstance().getVoice("kevin16");
-        if (this.voice == null) System.out.println("Giati?");
+        if (this.voice == null) 
+		System.out.println("Unexpected Error whiles loading voices");
         this.voice.allocate();
 	}
 	public void configure() {}
 	
 	public void playContents(List<String> contents) {
-		System.out.println("print");
+		for (String text : contents)
+			play(text);
 	}
 	
 	public void setVolume(int volume) { this.voice.setVolume((float) volume); }
@@ -40,7 +42,7 @@ public class TTSFacade {
 	
 	public int getRate() { return rate; }
 	
-	public void play(String text) {
+	private void play(String text) {
 		this.voice.speak(text);
 	}
 }
